@@ -17,8 +17,34 @@ Isolamento Fisico (memória, recursos, etc) -> cgroups
 - O ideal é agilizar todos os runs em um só comando!
 - NÃO É POSSÍVEL INTERAGIR COM AS CAMADAS READ- ONLY
 
+## Dia 01 - Aula 03
+- O container utiliza o kernel do próprio host (exemplo: um prédio de 100 apartamentos e cada um com o porteiro? Não rola!)
+- IPTABLE e NETFILTER -> tudo relacionado à rede. Como a internet se conecta ao container
+- CGROUPS: Cpu, memória, recursos
+- NAMESPACE: Usuários, rede, permissões
 
-PARA FAZER: <br>
+## Dia 01 - Aula 06
+Alguns comandos:
+> docker version<br>
+> docker container ls<br>
+> docker container run hello-world (roda e para)<br> 
+> docker container run -ti hello-world (roda e mantém em execução e interativo)
+> docker container ls -a (mostra os containers que estão em execução e os que já pararam)
+> docker container run -ti ubuntu (rodou o Ubuntu e já abriu o terminal, por conta do -ti. Perceba que o nome root muda para o ID daquele container)
+> docker container **attach** ID_OU_NOME (para voltar para um container ativo)
+
+<br>
+OBS: Todo container tem um entry-point. Se esse cara morrer, o container morre.<br>
+OBS 2: Se quiser sair do container sem matar, é preciso apertar CTRL + P + Q
+<br>
+OBS 3: Quando você roda um container que precisa ser rodado em primeiro plano, para evitar o erro de ficar preso, é preciso rodar com o **-d** para que ele se conecte com o DAEMON, ou seja, em segundo plano (-d -> DESANEXADO). Para executar alguma coisa nesse container, utilize o **EXEC**:<br>
+> docker container exec -ti ID_OU_NOME O_QUE_QUER_RODAR
+
+
+
+
+
+### PARA FAZER: <br>
 [X] Instalar o git no linux<br> 
 [X] Criar um repositório para o estudo do Docker<br>
 [X] Clonar o repositório na minha máquina
