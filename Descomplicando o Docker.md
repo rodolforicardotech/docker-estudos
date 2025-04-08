@@ -40,11 +40,23 @@ OBS 2: Se quiser sair do container sem matar, é preciso apertar CTRL + P + Q
 OBS 3: Quando você roda um container que precisa ser rodado em primeiro plano, para evitar o erro de ficar preso, é preciso rodar com o **-d** para que ele se conecte com o DAEMON, ou seja, em segundo plano (-d -> DESANEXADO). Para executar alguma coisa nesse container, utilize o **EXEC**:<br>
 > docker container exec -ti ID_OU_NOME O_QUE_QUER_RODAR
 
+## Dia 01 - Aula 07
+> docker container **stop** ID<br>
+> docker container **start** ID<br>
+> docker container **restart** ID<br>
+> docker container **inspect** ID (retorna todas as informações do container)<br>  
+> docker container **pause** ID  
+> docker container **unpause** ID  
+> docker container logs -f ID (mostra os logs do container. Legal para aqueles que precisam rodar em primeiro plano)  
+> docker container **rm** ID (remove o container. Se for um container que roda em primeiro plano, tem que parar primeiro OU forçar o rm. Esse comando também remove o container lá do ls -a)  
+> 
 
+OBS: O curl é uma ferramenta para fazer requisições URL.
 
 
 
 ### PARA FAZER: <br>
+[] Realizar o curl do arquivo nginx  
 [X] Instalar o git no linux<br> 
 [X] Criar um repositório para o estudo do Docker<br>
 [X] Clonar o repositório na minha máquina
