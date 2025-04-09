@@ -56,7 +56,7 @@ OBS: O curl é uma ferramenta para fazer requisições URL.
 
 
 ### PARA FAZER: <br>
-[] Realizar o curl do arquivo nginx  
+[X] Realizar o curl do arquivo nginx  
 [X] Instalar o git no linux<br> 
 [X] Criar um repositório para o estudo do Docker<br>
 [X] Clonar o repositório na minha máquina
