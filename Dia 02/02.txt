@@ -1,0 +1,94 @@
+🗓 Resumo da Aula - Dia 2
+Temas principais:
+Volumes no Docker
+
+Criação e manipulação de imagens
+
+Publicação no Docker Hub
+
+Registro privado de imagens
+
+📦 Volumes
+Containers não mantêm dados após serem encerrados.
+
+Volumes permitem que os dados persistam mesmo após o container ser destruído.
+
+Dois tipos principais de volumes:
+
+Bind mount (type=bind): você liga um diretório local ao container.
+
+Exemplo: /opt/giropops no host → /giropops no container.
+
+Volume (type=volume): o Docker gerencia automaticamente um volume interno.
+
+🛠 Exemplo prático (bind mount):
+Criação de diretório local:
+
+bash
+Copy
+Edit
+mkdir -p /opt/giropops
+Rodar o container com volume bind:
+
+bash
+Copy
+Edit
+docker run -it --rm \
+  -v /opt/giropops:/giropops \
+  debian
+Criar arquivo dentro do container:
+
+bash
+Copy
+Edit
+touch /giropops/teste
+Mesmo após matar o container, o arquivo continua lá em /opt/giropops.
+
+🛠 Imagens
+Criar imagens com Dockerfile.
+
+Rodar container, modificar conteúdo, e criar nova imagem com docker commit.
+
+Exemplo de comando:
+
+bash
+Copy
+Edit
+docker commit <container_id> minha-imagem:nova
+☁️ Docker Hub
+Criar conta no Docker Hub.
+
+Fazer login com:
+
+bash
+Copy
+Edit
+docker login
+Subir imagem com:
+
+bash
+Copy
+Edit
+docker tag minha-imagem usuario/minha-imagem
+docker push usuario/minha-imagem
+🧰 Registro Privado
+É possível subir um registro privado local.
+
+Para testes, pode-se usar ferramentas como registry (imagem oficial do Docker).
+
+Exemplo básico:
+
+bash
+Copy
+Edit
+docker run -d -p 5000:5000 --name registry registry:2
+Para produção, será necessário configurar autenticação e segurança.
+
+🧪 Exercício proposto no final:
+Criar um diretório local.
+
+Rodar um container com bind mount nesse diretório.
+
+Criar um arquivo dentro do container.
+
+Destruir o container e verificar se o arquivo persiste no host.
