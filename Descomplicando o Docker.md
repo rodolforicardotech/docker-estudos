@@ -99,3 +99,4 @@ docker **image build** -t bulba:1.0 . ()
 [X] Instalar o git no linux<br> 
 [X] Criar um repositório para o estudo do Docker<br>
 [X] Clonar o repositório na minha máquina
+[ ] Criar outros Dockerfiles com exemplos mais simples
